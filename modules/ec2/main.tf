@@ -39,7 +39,7 @@ resource "aws_instance" "this" {
   associate_public_ip_address = true
 
   user_data_replace_on_change = true
-  user_data = <<-USERDATA
+  user_data                   = <<-USERDATA
   #!/bin/bash
   set -e
 

@@ -102,7 +102,9 @@ pipeline {
           if [ "${ACTION}" = "apply" ]; then
             terraform apply -input=false -auto-approve tfplan
           elif [ "${ACTION}" = "destroy" ]; then
-            terraform destroy -input=false -auto-approve
+           terraform destroy -input=false -auto-approve \
+              -target=module.ec2 \
+              -target=module.vpc
           else
             echo "ACTION=plan selected. Skipping apply/destroy."
           fi
@@ -111,3 +113,4 @@ pipeline {
     }
   }
 }
+

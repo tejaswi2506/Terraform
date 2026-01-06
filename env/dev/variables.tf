@@ -10,7 +10,7 @@ variable "env" {
 
 variable "name_prefix" {
   type    = string
-  default = "tf-prod-lab"
+  default = "tf-dev"
 }
 
 variable "vpc_cidr" {
